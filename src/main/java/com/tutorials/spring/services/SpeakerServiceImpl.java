@@ -9,6 +9,15 @@ public class SpeakerServiceImpl implements SpeakerService {
     
     private SpeakerRepository repository ;
 
+    public SpeakerServiceImpl(){
+        System.out.println("constructor with no arg called");
+    }
+
+    public SpeakerServiceImpl(SpeakerRepository repository) {
+        System.out.println("constructor with arg called");
+        this.repository = repository;
+    }
+
     @Override
     public List<Speaker> findAll(){
         return repository.findAll();
